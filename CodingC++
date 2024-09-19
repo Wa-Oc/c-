@@ -1,4 +1,4 @@
-
+//c++ for grading system 
 
  
 
@@ -20,18 +20,11 @@ int main() {
             cout << "Grade: B" << endl;
         } else if (score >= 50 && score <= 59) {
             cout << "Grade: C" << endl;
-        } else if (score >= 40 && score <= 49) {
-            cout << "Grade: D" << endl;
-        } else {
-            cout << "Grade: Fail" << endl;
-        }
-    } else {
-        cout << "Invalid score! Please enter a score between 0 and 100." << endl;
-    }
+        } 
 
  
 
- 
+ // c++ for grading system 
 
    #include <iostream>
 using namespace std;
@@ -63,7 +56,7 @@ int main() {
     return 0;
 }  
 
-
+// c++ to find average  of three subjects 
 }#include <iostream>
 using namespace std;
 
