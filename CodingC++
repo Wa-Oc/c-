@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int score1, score2, score3;
+    float average;
+    char grade;
+
+    // Ask the user to input scores for three subjects
+    cout << "Enter the score for subject 1: ";
+    cin >> score1;
+    cout << "Enter the score for subject 2: ";
+    cin >> score2;
+    cout << "Enter the score for subject 3: ";
+    cin >> score3;
+
+    // Calculate the average score
+    average = (score1 + score2 + score3) / 3.0;
+
+    // Determine the grade based on the average score
+    switch (static_cast<int>(average) / 10) {
+        case 10:  // For perfect score (100)
+        case 9:
+        case 8:
+        case 7:
+            grade = 'A';
+            break;
+        case 6:
+            grade = 'B';
+            break;
+        case 5:
+            grade = 'C';
+            break;
+        case 4:
+            grade = 'D';
+            break;
+        default:
+            grade = 'F';  // For scores below 40
+            break;
+    }
+
+    // Output the results
+    cout << "Average score: " << average << endl;
+    cout << "Grade: " << grade << endl;
+
+    return 0;
+}
+
+
+ 
+
+   
