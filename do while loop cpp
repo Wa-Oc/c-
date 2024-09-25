@@ -1,0 +1,19 @@
+/*
+Author:Walter  Ongoye 
+Reg No:BBIT-05-0124/2016
+Description:C++  do while loop
+*/
+#include<iostream>
+using namespace std;
+int main(){
+    int i=1,sum;
+ do   while(i=1; i<10){
+    cout<<i<<" ";i++;
+    sum=sum+i;
+    }
+    cout<<sum<<sum<<sum<<endl;
+    return 0;
+    }
+    
+    
+    
