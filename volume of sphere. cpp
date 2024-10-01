@@ -1,0 +1,26 @@
+/*
+Author:Walter  Ongoye 
+Reg No:BBIT-05-0124/2016
+Description:C++ function  to find the volume  of a sphere.
+*/
+#include <iostream>
+#define PI 3.14159
+
+using namespace std;
+
+double volume_of_sphere(double radius) {
+    return (4.0 / 3.0) * PI * radius * radius * radius;
+}
+
+int main() {
+    double radius;
+    cout << "Enter the radius of the sphere: ";
+    cin >> radius;
+    cout << "The volume of the sphere is: " << volume_of_sphere(radius) << endl;
+    return 0;
+}
+    
+   //define function 
+   double volume of sphere(double radius){
+   return(4.0/3.0)*PI*radius *radius *radius;
+   } 
