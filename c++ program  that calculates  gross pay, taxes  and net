@@ -1,0 +1,55 @@
+/*
+Author:Walter  Ongoye 
+Reg No:BBIT-05-0124/2016
+Description:C++ program  that calculates gross pay,taxes and net
+*/
+#include <iostream>
+using namespace std;
+
+double calculate_overtime(double hours, double hourly_rate) {
+    if (hours > 40) {
+        return (hours - 40) * (hourly_rate * 1.5);
+    }
+    return 0;
+}
+
+double calculate_gross_pay(double hours, double hourly_rate) {
+    if (hours > 40) {
+        return (40 * hourly_rate) + calculate_overtime(hours, hourly_rate);
+    }
+    return hours * hourly_rate;
+}
+
+double calculate_taxes(double gross_pay) {
+    if (gross_pay <= 600) {
+        return gross_pay * 0.15;
+    } else {
+        return (600 * 0.15) + ((gross_pay - 600) * 0.20);
+    }
+}
+
+int main() {
+    double hours_worked, hourly_rate, gross_pay, taxes, net_pay;
+
+    // Input hours worked and hourly wage
+    cout << "Enter the number of hours worked: ";
+    cin >> hours_worked;
+    cout << "Enter the hourly wage: ";
+    cin >> hourly_rate;
+
+    // Calculate gross pay
+    gross_pay = calculate_gross_pay(hours_worked, hourly_rate);
+
+    // Calculate taxes
+    taxes = calculate_taxes(gross_pay);
+
+    // Calculate net pay
+    net_pay = gross_pay - taxes;
+
+    // Output the results
+    cout << "Gross Pay: $" << gross_pay << endl;
+    cout << "Taxes: $" << taxes << endl;
+    cout << "Net Pay: $" << net_pay << endl;
+
+    return 0;
+}
