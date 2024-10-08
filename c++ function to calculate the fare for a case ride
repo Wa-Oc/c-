@@ -1,0 +1,68 @@
+/*
+Author:Walter  Ongoye 
+Reg No:BBIT-05-0124/2016
+Description:c++ function  calculate the fare for a cabe ride 
+*/
+#include <iostream>
+#include <cmath> // for round function using ceil
+using namespace std;
+
+// Function to calculate cab fare
+double calculateFare(double distance, int passengers, bool isAirport) {
+    const double MINIMUM_FARE = 5.00;
+    const double DISTANCE_RATE = 1.80; // Per 1/10 mile
+    const double FIRST_ADDITIONAL_PASSENGER = 1.00;
+    const double ADDITIONAL_PASSENGER_RATE = 0.50;
+    const double AIRPORT_SURCHARGE = 2.00;
+
+    // Calculate base fare based on distance
+    double fare = distance * DISTANCE_RATE;
+
+    // If the fare is less than the minimum fare, round it to the minimum
+    if (fare < MINIMUM_FARE) {
+        fare = MINIMUM_FARE;
+    }
+
+    // Add charge for passengers if more than 1
+    if (passengers > 1) {
+        fare += FIRST_ADDITIONAL_PASSENGER;
+        fare += (passengers - 2) * ADDITIONAL_PASSENGER_RATE; // For additional passengers beyond the 2nd
+    }
+
+    // Add airport surcharge if applicable
+    if (isAirport) {
+        fare += AIRPORT_SURCHARGE;
+    }
+
+    return round(fare * 100.0) / 100.0; // Round to nearest cent
+}
+
+int main() {
+    double distance;
+    int passengers;
+    char airportOption;
+    bool isAirport;
+
+    // Input from the user
+    cout << "Enter the distance traveled (in 1/10 of a mile): ";
+    cin >> distance;
+
+    cout << "Enter the number of passengers: ";
+    cin >> passengers;
+
+    cout << "Is the trip to/from the airport? (y/n): ";
+    cin >> airportOption;
+    isAirport = (airportOption == 'y' || airportOption == 'Y');
+
+    // Calculate fare
+    double totalFare = calculateFare(distance, passengers, isAirport);
+
+    // Output the result
+    cout << "The total cab fare is: $" << totalFare << endl;
+
+    return 0;
+}
+
+
+
+    
