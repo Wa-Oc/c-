@@ -1,0 +1,38 @@
+class BankAccount:
+    def __init__(self, account_number):
+        self.__account_number = account_number
+        self.__balance = 0.0
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+        else:
+            print("Deposit amount must be positive.")
+
+    def withdraw(self, amount):
+        if amount > 0:
+            if self.__balance >= amount:
+                self.__balance -= amount
+            else:
+                print("Insufficient funds. Withdrawal denied.")
+        else:
+            print("Withdrawal amount must be positive.")
+
+    def get_balance(self):
+        return self.__balance
+
+# Part C: Code Usage
+# Create a BankAccount object and perform the operations
+account = BankAccount("12345678")
+
+# 1. Deposit $500 into the account
+account.deposit(500)
+
+# 2. Withdraw $200 from the account
+account.withdraw(200)
+
+# 3. Attempt to withdraw $400 from the account (this should be prevented)
+account.withdraw(400)
+
+# 4. Print the final balance
+print("Final Balance:", account.get_balance())
